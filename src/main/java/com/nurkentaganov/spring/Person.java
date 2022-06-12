@@ -1,7 +1,10 @@
 package com.nurkentaganov.spring;
 
-import java.sql.SQLOutput;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.sql.SQLOutput;
+@Component("personBean")
 public class Person {
      private Pet pet;
      private String surname;
@@ -24,8 +27,9 @@ public class Person {
           return age;
      }
 
+     @Autowired
      public Person(Pet pet) {
-          System.out.println("Person bean is created");
+          System.out.println("Person constructor is created");
           this.pet = pet;
      }
      public void setPet(Pet pet) {
